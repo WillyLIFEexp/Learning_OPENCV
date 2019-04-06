@@ -12,3 +12,6 @@ Function 裡面的`0`代表著default的WebCam
 將照片以正常的方式顯示出來
 
 ![Hello](https://snag.gy/F3yA1p.jpg) ![alt text](https://snag.gy/nPO2Iz.jpg)
+
+但在抓取影片時, OpenCV已經顏色的順序調整好所以在抓取影像時不需要
+再特別去轉顏色的順序
