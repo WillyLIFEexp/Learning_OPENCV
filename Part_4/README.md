@@ -7,4 +7,8 @@
 
 Function 裡面的`0`代表著default的WebCam
 
+之前在學習如何透過OpecnCV讀取照片時RGB的順序會變調整為BGR
+因此我們在圖取照片後還需要透過`cv2.cvtColor()` 的幫助才能
+將照片以正常的方式顯示出來
 
+![Hello](https://snag.gy/F3yA1p.jpg) ![alt text](https://snag.gy/nPO2Iz.jpg)
