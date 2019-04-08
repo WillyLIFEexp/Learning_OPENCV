@@ -23,6 +23,20 @@ Function 裡面的`0`代表著default的WebCam
 如果有要將影像存起來, 我們可以透過定義`cv2.VideoWriter()`的方式將影片存取
 只是要注意在定義VideoWriter時裡面的fourcc的參數,可透過下面兩個表格自己需要用哪種fourcc
 
+
+## 讀取Video
+
+這邊也是透過cv2的VideoCapture, 我們可以讀取影片
+
+`cv2.VideoCapture("vidoe/path/name.mp4")`
+
+因為透過cv2顯示影片的速度非常的快, 並不是給我們人讀的速度
+所以記得需要透過time delay的方式將影片放慢速度
+
+當我們開始在讀取影片時, cv2.VideoCapture()會回傳兩個直回來
+一個是ret, 是來判定是否有影片回傳回來, 另一個則是frame, 是照片的資訊
+所以我們可以透過ret 來確認影片是否已結束
+
 ### Reference
 [Wiki](https://en.wikipedia.org/wiki/FourCC)
 
