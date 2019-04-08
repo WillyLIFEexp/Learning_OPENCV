@@ -1,21 +1,50 @@
 import cv2
 
-def 
+# 定義劃框框的function
+def draw_rect(event,x,y,flag,param):
+    global pt1,pt2,firstPoint,secondPoint
+    
+    if event == cv2.EVENT_LBUTTONDOWN:
+        if firstPoint and secondPoint:
+            pt1 = (0,0)
+            pt2 = (0,0)
+            firstPoint = False
+            secondPoint= False
+       
+        if firstPoint == False:
+            pt1 = (x,y)
+            firstPoint = True
+        elif secondPoint == False:
+            pt2 = (x,y)
+            secondPoint = True
+
 # 定義一個變數叫做Cap並使用cv2.VideoCapture()來抓取對應的視訊機
 cap = cv2.VideoCapture(0)
+
+# 定義一些global variable
+pt1 = (0,0)
+pt2 = (0,0)
+firstPoint = False
+secondPoint= False
+
+# 定義視窗名稱
+cv2.namedWindow("Test")
+# 透過setMouseCallBack, cv2就能知道我們在點哪個視窗應該要觸發什麼樣的事件
+cv2.setMouseCallback("Test", draw_rect)
 
 # 透過While迴圈不斷地抓取抓取照片, 因影片其實就是不間斷的照片
 while True:
     # 抓取照片
     ret,frame = cap.read()
+
+    if firstPoint:
+        cv2.circle(frame, pt1,5,(255,0,0),3)
     
-    # 從之前學習到的, 因OpenCV對應的RGB位子順序不同所以抓取到照片時需要再調整順序
-    # 但在影像抓取時, 顏色的部分已經轉製好了所以不需要特別在做調整
-    g_img = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    
-    # 透過之前的方式將照片顯示出來
-    cv2.imshow("img",frame)
-    cv2.imshow("g_img",g_img)
+    if firstPoint and secondPoint:
+        cv2.circle(frame, pt2,5,(255,0,0),3)
+        cv2.rectangle(frame,pt1,pt2,(0,0,255),3)     
+
+    cv2.imshow("Test",frame) 
     
     # 透過按q來結束迴圈
     if cv2.waitKey(1) & 0xFF == ord('q'):
