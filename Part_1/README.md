@@ -46,3 +46,5 @@ mat = np.arange(0,100).reshape(10,10) # 建立出(10,10)的matrix
 # Image with Numpy
 Numpy 可以透過 `np.asarray()` 的方式來將圖片轉換成 array type
 ```python 
+arr = np.asarry(<img_object>)
+```
