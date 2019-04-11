@@ -31,3 +31,8 @@ python= -> 虛擬環境裡面所使用Python的版本
 `conda install -c conda-forge/label/broken opencv `</br>
 `conda install -c conda-forge/label/cf201901 opencv `</br>
 [Conda官方文件](https://anaconda.org/conda-forge/opencv)
+
+
+## 確認OpenCV是否安裝成功
+透過以下的方式可以讓我們檢查是否有成功將OpenCV安裝完成
+![](https://snag.gy/9rzsVg.jpg)
