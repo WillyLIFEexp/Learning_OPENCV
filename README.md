@@ -35,5 +35,5 @@ python= -> 虛擬環境裡面所使用Python的版本
 
 ## 確認OpenCV是否安裝成功
 透過以下的方式可以讓我們檢查是否有成功將OpenCV安裝完成
-![](https://snag.gy/9rzsVg.jpg)
+![](https://snag.gy/9rzsVg.jpg)</br>
 安裝完成後就可以開始準備練習OpenCV了~
