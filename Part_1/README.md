@@ -1,4 +1,4 @@
-# Numpy and Image Basic
+# 1. Numpy and Image Basic
 **在這邊會介紹Numpy的一些基本使用方式以及Image的一些基本觀念**
 
 **這是定義List的方式**</br>
@@ -36,4 +36,15 @@ this_is_ones = np.ones(5) # [1 1 1 1 1]
 ```python
 add_list = np.array(this_is_list)
 add_one = add_list + 1
+```
+**我們可以透過row,column來抓取Numpy Matrix 底下的值**</br>
+```python
+mat = np.arange(0,100).reshape(10,10) # 建立出(10,10)的matrix
+# mat[row,col]
+```
+
+# Image with Numpy
+Numpy 可以透過 `np.asarray()` 的方式來將圖片轉換成 array type
+```python 
+arr = np.asarry(<img_object>)
 ```
