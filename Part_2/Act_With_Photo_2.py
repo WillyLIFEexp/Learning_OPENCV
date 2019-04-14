@@ -1,6 +1,7 @@
 import cv2
 import matplotlib.pyplot as plt
 import numpy as np
+from math import sqrt
 
 # cv2的event 都會回傳以下的資訊回來
 # event -> 動作
@@ -8,9 +9,29 @@ import numpy as np
 # flag -> 是否觸發事件
 # param -> 可以將其他數值傳進去fun裡面
 # 畫圈圈的function
-def draw_circle(event,x,y,flag,param):
+def move_circle(event,x,y,flag,param):
+    global first_pts,click_check
+  
     if event == cv2.EVENT_LBUTTONDOWN:
-        cv2.circle(img_c,(x,y),10,(255,0,0),-1)
+        first_pts = (x,y)
+        click_check = True
+    elif event == cv2.EVENT_MOUSEMOVE:
+        second_pts = (x,y)
+        if click_check:
+            cv2.circle(img_c,first_pts,calc_distance(first_pts,second_pts),(255,0,0),-1)
+    elif event == cv2.EVENT_LBUTTONUP:
+        second_pts = (x,y)
+        click_check = False
+        cv2.circle(img_c,first_pts,calc_distance(first_pts,second_pts),(255,0,0),-1)
+
+def calc_distance(p1, p2):
+    (x1, y1) = p1
+    (x2, y2) = p2
+    return round(sqrt((x1-x2)**2 + (y1-y2)**2))
+
+# 定義一些Global Variable
+first_pts = (0,0)
+click_check = False
     
 # 先透過cv2.imread的方式將照片讀進來
 img = cv2.imread("../Test_Photo/cat.jpg")
@@ -19,7 +40,7 @@ img_c = img.copy()
 # 如果要串接cv2的event的話, 我們需要先定義視窗的名稱
 cv2.namedWindow("TEST")
 # 再透過setMouseCallback來將視窗與我們定義的function 串再一起
-cv2.setMouseCallback("TEST",draw_circle)
+cv2.setMouseCallback("TEST",move_circle)
 
 while True:
     
