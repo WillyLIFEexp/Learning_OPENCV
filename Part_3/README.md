@@ -8,6 +8,9 @@
 ## Blending and Pasting 
 在這邊我們學習如何將兩張照片,同樣大小或不同大小的圖片,透過重疊的方式將兩張照片和成為一張. 除此之外,我們也會在這邊學習到關於Mask的使用方法與觀念
 
+## Image Thresholding
+我們先將照片轉換成黑跟白再透過 Thresholding 的方式將我們想要抓取的部分區分出來
+
 ## Image Blurring and Smoothing
 
 ## Morphological Operations
