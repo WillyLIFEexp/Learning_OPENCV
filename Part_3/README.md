@@ -33,9 +33,24 @@
     
 Reference:</br>
 [Difference](https://stackoverflow.com/questions/43392956/explanation-for-ddepth-parameter-in-cv2-filter2d-opencv)
+
 ## Morphological Operations
-
-
+我們在這邊會練習透過Morphological的方式處理一些照片</br>
+透過以下的Morphological Function
+* Erode
+    * 透過Erode的方式, 將前景的外誆,boundaries,去除掉
+    * 去除掉照片中的features
+* Dilate
+    * 加強前景的物件
+    * 銳化Features
+* MORPH_OPEN
+    * Erosion followed by dilation
+    * 移除White Noise
+* MORPH_CLOSE
+    * Dilation followed by Erosion
+    * 移除Black Noise
+* MORPH_GRADIENT
+    * Dilated 與eroded後的照片相減出來的結果
 ## Gradients 
 
 ## Histogram
