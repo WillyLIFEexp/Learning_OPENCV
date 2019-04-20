@@ -29,7 +29,8 @@
     * Edges可以被保存</br>
 * BilateralFilter</br>
     * A non-linear operation</br>
-    * Edge-preserving, and noise-reducing smoothing filter for images</br>
+    * Edge-preserving, and noise-reducing smoothing filter for images
+    
 Reference:</br>
 [Difference](https://stackoverflow.com/questions/43392956/explanation-for-ddepth-parameter-in-cv2-filter2d-opencv)
 ## Morphological Operations
